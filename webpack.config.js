@@ -32,9 +32,15 @@ module.exports = {
           "style-loader",
           "css-loader"
         ]
-       }
+      },
+      {
+        test: /\.(jpg|png)$/,
+        use: {
+          loader: 'url-loader',
+        },
+      }
     ]
   },
   // add a custom index.html as the template
-  plugins:  [new HtmlWebpackPlugin({ template: './src/public/index.html' })]
+  plugins:  [new HtmlWebpackPlugin({ template: './public/index.html' })]
 };
